@@ -117,8 +117,8 @@
 		9F15E7AD2A02FB9100DE57AC /* StoryBoards */ = {
 			isa = PBXGroup;
 			children = (
-				9F15E7982A02DEBB00DE57AC /* LaunchScreen.storyboard */,
 				9F15E7932A02DEBA00DE57AC /* Main.storyboard */,
+				9F15E7982A02DEBB00DE57AC /* LaunchScreen.storyboard */,
 			);
 			path = StoryBoards;
 			sourceTree = "<group>";

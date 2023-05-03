@@ -18,10 +18,31 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vfR-vH-UTJ" customClass="SpringView" customModule="SpringAnimation">
                                 <rect key="frame" x="76.666666666666686" y="138" width="240" height="128"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="29" translatesAutoresizingMaskIntoConstraints="NO" id="hcM-Do-w4l">
+                                        <rect key="frame" x="99.333333333333329" y="29.33333333333335" width="41.333333333333329" height="69.666666666666686"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4sX-gK-Sep">
+                                                <rect key="frame" x="0.0" y="0.0" width="41.333333333333336" height="20.333333333333332"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a8B-nn-1oR">
+                                                <rect key="frame" x="0.0" y="49.333333333333314" width="41.333333333333336" height="20.333333333333329"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
                                 <color key="backgroundColor" systemColor="systemPurpleColor"/>
                                 <constraints>
+                                    <constraint firstItem="hcM-Do-w4l" firstAttribute="centerY" secondItem="vfR-vH-UTJ" secondAttribute="centerY" id="PIA-WA-7tb"/>
                                     <constraint firstAttribute="height" constant="128" id="YVB-Vj-p2D"/>
                                     <constraint firstAttribute="width" constant="240" id="e2p-Q6-okf"/>
+                                    <constraint firstItem="hcM-Do-w4l" firstAttribute="centerX" secondItem="vfR-vH-UTJ" secondAttribute="centerX" id="fKU-UF-inF"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="autostart" value="YES"/>
@@ -32,10 +53,10 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZrY-At-4au" customClass="SpringButton" customModule="SpringAnimation">
-                                <rect key="frame" x="159" y="676" width="75" height="35"/>
+                                <rect key="frame" x="166" y="676.66666666666663" width="61.333333333333343" height="34.333333333333371"/>
                                 <color key="backgroundColor" systemColor="systemYellowColor"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button">
+                                <buttonConfiguration key="configuration" style="plain" title="Start">
                                     <color key="baseForegroundColor" systemColor="systemTealColor"/>
                                 </buttonConfiguration>
                                 <userDefinedRuntimeAttributes>
@@ -60,6 +81,8 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="animationNameLabel" destination="4sX-gK-Sep" id="WOV-7O-yu5"/>
+                        <outlet property="curveNameLabel" destination="a8B-nn-1oR" id="fDM-UW-Qhf"/>
                         <outlet property="springAnimationView" destination="vfR-vH-UTJ" id="i73-A8-D9y"/>
                     </connections>
                 </viewController>

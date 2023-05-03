@@ -20,13 +20,17 @@ final class ViewController: UIViewController {
     }
 
     @IBAction func springButton(_ sender: SpringButton) {
-        springAnimationView.animation = "pop"
-        springAnimationView.curve = "easeIn"
-        springAnimationView.animate()
 
-        sender.animation = "pop"
-        sender.duration = 3
-        sender.animate()
+        for spring in springs.shuffled() {
+            springAnimationView.animation = spring.preset
+            springAnimationView.curve = spring.curve
+            springAnimationView.animate()
+
+            sender.animation = "pop"
+            sender.duration = 2
+            sender.animate()
+        }
+
     }
 
 }

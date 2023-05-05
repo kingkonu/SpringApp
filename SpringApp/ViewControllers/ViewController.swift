@@ -10,37 +10,27 @@ import SpringAnimation
 
 final class ViewController: UIViewController {
 
-    private let springs = Spring.getAnimation()
-
     @IBOutlet weak var springAnimationView: SpringView!
-    @IBOutlet weak var animationNameLabel: UILabel!
-    @IBOutlet weak var curveNameLabel: UILabel!
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        springAnimationView.animation = "pop"
-        animationNameLabel.text = "Pop"
-        springAnimationView.curve = "easeIn"
-        curveNameLabel.text = "easeIn"
+    @IBOutlet weak var animationNameLabel: UILabel! {
+        didSet {
+            animationNameLabel.text = animation.description
+        }
     }
+
+    private var animation = Animation.randomAnimation
 
     @IBAction func springButton(_ sender: SpringButton) {
+        animationNameLabel.text = animation.description
 
-        for spring in springs.shuffled() {
-            animationNameLabel.text = spring.preset
-            curveNameLabel.text = spring.curve
-            sender.setTitle(spring.preset, for: .normal)
+        springAnimationView.animation = animation.preset
+        springAnimationView.curve = animation.curve
+        springAnimationView.duration = animation.duration
+        springAnimationView.force = animation.force
+        springAnimationView.delay = animation.delay
+        springAnimationView.animate()
 
-            springAnimationView.animation = spring.preset
-            springAnimationView.curve = spring.curve
-            springAnimationView.animate()
-
-            sender.animation = "pop"
-            sender.duration = 2
-            sender.animate()
-        }
-
+        animation = Animation.randomAnimation
+        sender.setTitle("Run \(animation.preset)", for: .normal)
     }
-
 }
 
